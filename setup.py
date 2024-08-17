@@ -7,23 +7,32 @@ Setup for deployment
 """
 
 import setuptools
+import shutil
 import subprocess
 
 
 def get_version_from_git():
-    """Retrieve package version from tag name
+    """Retrieve package version from git tag name.
     @return: package version.
     """
-    version = subprocess.check_output(["git", "describe", "--tags"]).strip().decode("utf-8")
-    return version
+    git_path = shutil.which("git")
+
+    if git_path is None:
+        raise EnvironmentError("Git is not installed or not found in PATH.")
+
+    try:
+        version = subprocess.check_output([git_path, "describe", "--tags"]).strip().decode("utf-8")
+        return version
+
+    except subprocess.CalledProcessError as error:
+        raise RuntimeError(f"Failed to get version from git: {error}")
 
 
-def parse_requirements(r_filename: str):
-    """Load requirements from a pip requirements file and return them as lists
-    @param r_filename: path to text requirements file
-    @return: lists of requirements, basic and extra requirements.
+def parse_requirements():
+    """Load requirements from a pip requirements file and return them as a list
+    @return: dependencies with compatibility symbol changed
     """
-    with open(r_filename, 'r', encoding='utf-8') as f:
+    with open('requirements.txt', 'r', encoding='utf-8') as f:
         return [line.strip().replace('~=', '>=')
                 for line in f if line.strip() and not line.startswith("#")]
 
