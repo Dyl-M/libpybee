@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 
+"""File Information
+@file_name: test_script.py
+@author: Dylan "dyl-m" Monfret
+Unit tests for `libpybee`
+"""
+
 import os
 import unittest
 
 from libpybee import Library, Playlist, Track, DuplicateTrackError, DuplicatePlaylistError
-
-"""File Information
-@file_name: test_script.py
-@author: Dylan "dyl-m" Monfret
-Unit tests for `libpybee`.
-"""
 
 # Get the current directory of the test script
 test_dir = os.path.dirname(__file__)
