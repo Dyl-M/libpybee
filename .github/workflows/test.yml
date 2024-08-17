@@ -1,7 +1,7 @@
 # Install Python dependencies, run tests and lint with a variety of Python versions
 # More information: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
-name: Python Package
+name: Test & Coverage
 
 on:
     push:

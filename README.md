@@ -2,6 +2,7 @@
 
 [![GitHub last commit](https://img.shields.io/github/last-commit/Dyl-M/libpybee?label=Last%20commit&style=flat-square)](https://github.com/Dyl-M/libpybee/commits/main)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/w/Dyl-M/libpybee?label=Commit%20activity&style=flat-square)](https://github.com/Dyl-M/libpybee/commits/main)
+[![Test and Coverage](https://github.com/Dyl-M/libpybee/actions/workflows/test.yml/badge.svg)](https://github.com/Dyl-M/libpybee/actions/workflows/test.yml)
 [![DeepSource](https://app.deepsource.com/gh/Dyl-M/libpybee.svg/?label=active+issues&show_trend=true&token=QCUsSXrxx0Gn8hbQxa9G0KcW)](https://app.deepsource.com/gh/Dyl-M/libpybee/)
 
 A MusicBee Library Parser, by Dylan "[Dyl-M](https://github.com/Dyl-M)" Monfret, based on [Liam "liamks" Kaufman's](http://liamkaufman.com/) [`libpytunes`](https://github.com/liamks/libpytunes).
