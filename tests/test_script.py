@@ -1,5 +1,19 @@
+# -*- coding: utf-8 -*-
+
+import os
 import unittest
+
 from libpybee import Library, Playlist, Track, DuplicateTrackError, DuplicatePlaylistError
+
+"""File Information
+@file_name: test_script.py
+@author: Dylan "dyl-m" Monfret
+Unit tests for `libpybee`.
+"""
+
+# Get the current directory of the test script
+test_dir = os.path.dirname(__file__)
+test_path = os.path.join(test_dir, "Test Library.xml")
 
 
 class TestLibrary(unittest.TestCase):
@@ -9,7 +23,7 @@ class TestLibrary(unittest.TestCase):
         Track.all_tracks.clear()
         Playlist.all_playlists.clear()
         # Assuming there's a sample XML file path to test with
-        self.library = Library(lib_path="Test Library.xml")
+        self.library = Library(lib_path=test_path)
 
     def test_library_initialization(self):
         # Test that the Library object is initialized properly
