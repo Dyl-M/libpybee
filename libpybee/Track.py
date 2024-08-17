@@ -75,7 +75,7 @@ class Track:
 
     def to_dict(self):
         """Get a Track object as a dictionary."""
-        return {key: value for (key, value) in self}
+        return dict(self)
 
 
 class DuplicateTrackError(Exception):
