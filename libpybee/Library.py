@@ -149,7 +149,7 @@ class Library:
                 tag_idx += 1
             return sorted(list(values_list), key=lambda tag: unidecode.unidecode(tag).lower())
 
-        elif f'{att_name}' in t_dict.keys():
+        if f'{att_name}' in t_dict.keys():
             return [t_dict.get(f'{att_name}')]
 
         return []
