@@ -40,7 +40,7 @@ class Playlist:
 
     def to_dict(self):
         """Get a Playlist object as a dictionary."""
-        return {key: value for (key, value) in self}
+        return dict(self)
 
 
 class DuplicatePlaylistError(Exception):
