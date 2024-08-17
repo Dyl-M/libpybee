@@ -131,9 +131,5 @@ dmypy.json
 # Jetbrains PyCharm
 .idea/
 
-# Legacy
-*.pyc
-*.iml
-/.DS_Store
-/.project
-/.pydevproject
+# Token
+_token
