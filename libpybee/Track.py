@@ -15,7 +15,7 @@ class Track:
     def __init__(self, t_id=str):
         """Initialize a Track object. Attributes are set as None / empty / 0 with direct call to the class.
         @param t_id: Track ID.
-        # """
+        """
         if t_id in Track.all_tracks:
             raise DuplicateTrackError("Track ID already exists in current database.")
         self.id = t_id
