@@ -18,10 +18,8 @@ class Playlist:
         """
         if p_id in Playlist.all_playlists:
             raise DuplicatePlaylistError("Playlist ID already exists in current database.")
-
-        else:
-            self.id = p_id
-            Playlist.all_playlists.add(self.id)
+        self.id = p_id
+        Playlist.all_playlists.add(self.id)
 
         self.name = None
         self.all_items = None
