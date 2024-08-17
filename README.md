@@ -14,15 +14,15 @@ A MusicBee Library Parser, by Dylan "[Dyl-M](https://github.com/Dyl-M)" Monfret,
 * The language in which this file is exported depends on the language set in MusicBee. For the time being, this package will only support library XML files written in English, so you'll need to set MusicBee's language to English (`Edit` > `Edit Preferences` > `General`). "English (US)" is recommended.
 * Before using `libpybee`, it is also recommended to back up / to copy this XML file associated to your MusicBee Library elsewhere. I cannot guarantee at this time that no damage will occur to your file while using the package.
 
-## Documentation
-
-> Work In Progress.
-
 ## Installation
 
 > Work In Progress.
 
 ## Usage
+
+> Work In Progress.
+
+## Documentation
 
 > Work In Progress.
 
