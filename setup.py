@@ -42,7 +42,7 @@ setuptools.setup(
     version=get_version_from_git(),
     author='Dylan "dyl-m" Monfret',
     author_email="dyl_m.dev@proton.me",
-    description="A Python package for managing MusicBee library data.",
+    description='MusicBee Library Parser in Python (based on Liam Kaufman\'s "libpytunes")',
     long_description=open('README.md').read(),
     long_description_content_type="text/markdown",
     url="https://github.com/Dyl-M/libpybee",
