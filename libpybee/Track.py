@@ -18,6 +18,7 @@ class Track:
         """
         if t_id in Track.all_tracks:
             raise DuplicateTrackError("Track ID already exists in current database.")
+
         self.id = t_id
         Track.all_tracks.add(self.id)
 
