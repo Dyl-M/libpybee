@@ -8,7 +8,7 @@ Script dedicated to `Library` Object
 
 import libpybee
 
-XML = "../libpybee/test/Test Library.xml"
+XML = "../libpybee/tests/Test Library.xml"
 MY_LIBRARY = libpybee.Library(XML)
 
 PLAYLISTS = MY_LIBRARY.playlists
