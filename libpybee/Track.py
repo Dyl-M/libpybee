@@ -78,4 +78,3 @@ class Track:
 
 class DuplicateTrackError(Exception):
     """Exception raised when attempting to add a track to the Library with an existing ID."""
-    pass

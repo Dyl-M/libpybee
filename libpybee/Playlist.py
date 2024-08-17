@@ -43,4 +43,3 @@ class Playlist:
 
 class DuplicatePlaylistError(Exception):
     """Exception raised when attempting to add a duplicate element to a set."""
-    pass
