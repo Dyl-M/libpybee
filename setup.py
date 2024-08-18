@@ -7,7 +7,6 @@ Setup for deployment
 """
 
 import setuptools
-import shutil
 import subprocess
 
 
@@ -15,14 +14,9 @@ def get_version_from_git():
     """Retrieve package version from git tag name.
     @return: package version.
     """
-    git_path = shutil.which("git")
-
-    if git_path is None:
-        raise EnvironmentError("Git is not installed or not found in PATH.")
-
     try:
         version = (
-            subprocess.run([git_path, "describe", "--tags"],
+            subprocess.run(["git", "describe", "--tags"],
                            check=True,
                            stdout=subprocess.PIPE).stdout.decode("utf-8").strip()
         )
