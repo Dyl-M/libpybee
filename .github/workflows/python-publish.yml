@@ -21,6 +21,9 @@ jobs:
         steps:
             -   uses: actions/checkout@v4
 
+            -   name: Git status sanity check
+                run: git status
+
             -   name: Set up Python
                 uses: actions/setup-python@v5
                 with:
