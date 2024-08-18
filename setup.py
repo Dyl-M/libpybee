@@ -21,8 +21,10 @@ def get_version_from_git():
         raise EnvironmentError("Git is not installed or not found in PATH.")
 
     try:
-        version = subprocess.check_output(['git', 'describe', '--tags']).strip().decode('utf-8').split('-')[0]
-        return version
+        version = (
+            subprocess.run(["git", "describe", "--tags"], stdout=subprocess.PIPE).stdout.decode("utf-8").strip()
+        )
+        return version.split('-')[0]
 
     except subprocess.CalledProcessError as error:
         raise RuntimeError(f"Failed to get version from git: {error}")
@@ -65,4 +67,3 @@ setuptools.setup(
         ]
     }
 )
-
