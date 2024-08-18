@@ -22,7 +22,9 @@ def get_version_from_git():
 
     try:
         version = (
-            subprocess.run(["git", "describe", "--tags"], stdout=subprocess.PIPE).stdout.decode("utf-8").strip()
+            subprocess.run([git_path, "describe", "--tags"],
+                           check=True,
+                           stdout=subprocess.PIPE).stdout.decode("utf-8").strip()
         )
         return version.split('-')[0]
 
