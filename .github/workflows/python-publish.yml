@@ -39,7 +39,7 @@ jobs:
                     pip install build
 
             -   name: Build package
-                run: python -m build
+                run: python -m build GitPython
 
             -   name: Publish package
                 uses: pypa/gh-action-pypi-publish@ec4db0b4ddc65acdf4bff5fa45ac92d78b56bdf0
