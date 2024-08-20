@@ -13,7 +13,7 @@ from libpybee import Library, Playlist, Track, DuplicateTrackError, DuplicatePla
 
 # Get the current directory of the test script
 test_dir = os.path.dirname(__file__)
-test_path = os.path.join(test_dir, "Test Library.xml")
+test_path = os.path.join(test_dir, "test_lib_01.xml")
 
 
 class TestLibrary(unittest.TestCase):
