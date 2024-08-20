@@ -70,7 +70,7 @@ class Library:
             # Optional
             p.all_items = attributes.get('All Items')
             p.persistent_id = attributes.get('Persistent ID')
-            p.tracks = [self.tracks[f'{t["Track ID"]:0{n_tracks % 10 - 1}d}']
+            p.tracks = [self.tracks[f'{t["Track ID"]:0{len(str(n_tracks))}d}']
                         for t in attributes.get('Playlist Items', [])]
 
             p.n_tracks = len(p.tracks)
@@ -84,7 +84,7 @@ class Library:
         """
         for _, attributes in t_dict.items():
             # Init.
-            t_id = f'{attributes.get("Track ID"):0{n_tracks % 10 - 1}d}'
+            t_id = f'{attributes.get("Track ID"):0{len(str(n_tracks))}d}'
             t = Track(t_id)
 
             # Base
@@ -109,7 +109,7 @@ class Library:
             t.episode_date = attributes.get('Episode Date')
             t.file_location = u_parse.unquote(u_parse.urlparse(attributes.get('Location')).path)
             t.genre = self.multi_tag(attributes, 'Genre')
-            t.grouping = attributes.get('Grouping').split("; ")
+            t.grouping = attributes.get('Grouping').split("; ") if 'Grouping' in attributes else None
             t.kind = attributes.get('Kind')
             t.last_played = attributes.get('Play Date UTC')
             t.length = int(attributes.get('Total Time'))
