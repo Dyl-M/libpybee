@@ -1,9 +1,11 @@
 # `libpybee`
 
-![PyPI - Version](https://img.shields.io/pypi/v/libpybee?style=flat-square&label=version&color=yellow)
+![PyPI - Version](https://img.shields.io/pypi/v/libpybee?style=flat-square&label=Version&color=yellow)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Dyl-M/libpybee/python-publish.yml?label=Build&style=flat-square)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Dyl-M/libpybee/test.yml?label=Tests&style=flat-square)
+
 [![GitHub last commit](https://img.shields.io/github/last-commit/Dyl-M/libpybee?label=Last%20commit&style=flat-square)](https://github.com/Dyl-M/libpybee/commits/main)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/w/Dyl-M/libpybee?label=Commit%20activity&style=flat-square)](https://github.com/Dyl-M/libpybee/commits/main)
-[![Test and Coverage](https://github.com/Dyl-M/libpybee/actions/workflows/test.yml/badge.svg)](https://github.com/Dyl-M/libpybee/actions/workflows/test.yml)
 [![DeepSource](https://app.deepsource.com/gh/Dyl-M/libpybee.svg/?label=active+issues&show_trend=true&token=QCUsSXrxx0Gn8hbQxa9G0KcW)](https://app.deepsource.com/gh/Dyl-M/libpybee/)
 
 A MusicBee Library Parser, by Dylan "[Dyl-M](https://github.com/Dyl-M)" Monfret, based on [Liam "liamks" Kaufman's](http://liamkaufman.com/) [`libpytunes`](https://github.com/liamks/libpytunes).
@@ -28,7 +30,19 @@ pip install libpybee
 
 ## Usage
 
-> Work In Progress.
+```python
+import libpybee
+
+XML = "../MusicBee/iTunes Music Library.xml"  # Needs to be modified depending on the location of your MB library.
+MY_LIBRARY = libpybee.Library(XML)
+
+print(MY_LIBRARY)  # Displays a short summary of MB library status
+
+for track in MY_LIBRARY.tracks.values():
+    print(track, track.genre)  # Displays each track with their genres
+```
+
+More samples will be available in the [`_examples`](https://github.com/Dyl-M/libpybee/tree/dev/_examples) folder in the near future.
 
 ## Documentation
 
