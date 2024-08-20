@@ -6,19 +6,7 @@
 Setup for deployment
 """
 
-import git
-import os
 import setuptools
-
-
-def get_version_from_git():
-    """Retrieve package version from git tag name.
-    @return: package version.
-    """
-    tags = git.Repo(os.getcwd()).tags
-    if tags:
-        return tags[-1]
-    return '0.0.0'
 
 
 def parse_requirements():
@@ -32,7 +20,7 @@ def parse_requirements():
 
 setuptools.setup(
     name='libpybee',
-    version=get_version_from_git(),
+    version="0.1.0",
     author='Dylan "dyl-m" Monfret',
     author_email="dyl_m.dev@proton.me",
     description='MusicBee Library Parser in Python (based on Liam Kaufman\'s "libpytunes")',
