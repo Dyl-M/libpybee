@@ -7,6 +7,29 @@ Setup for deployment
 """
 
 import setuptools
+import shutil
+import subprocess
+
+
+def get_version_from_git():
+    """Retrieve package version from git tag name.
+    @return: package version.
+    """
+    git_path = shutil.which("git")
+
+    if git_path is None:
+        raise EnvironmentError("Git is not installed or not found in PATH.")
+
+    try:
+        version = (
+            subprocess.run([git_path, "describe", "--tags"],
+                           check=True,
+                           stdout=subprocess.PIPE).stdout.decode("utf-8").strip()
+        )
+        return version.split('-')[0]
+
+    except subprocess.CalledProcessError as error:
+        raise RuntimeError(f"Failed to get version from git: {error}")
 
 
 def parse_requirements():
@@ -20,7 +43,7 @@ def parse_requirements():
 
 setuptools.setup(
     name='libpybee',
-    version="0.1.0",
+    version=get_version_from_git(),
     author='Dylan "dyl-m" Monfret',
     author_email="dyl_m.dev@proton.me",
     description='MusicBee Library Parser in Python (based on Liam Kaufman\'s "libpytunes")',
