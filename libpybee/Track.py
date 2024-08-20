@@ -41,8 +41,8 @@ class Track:
         self.encoder = None
         self.episode_date = None
         self.file_location = None
-        self.genre = []
-        self.grouping = []
+        self.genre = None
+        self.grouping = None
         self.kind = None
         self.last_played = None
         self.length = None

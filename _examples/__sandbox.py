@@ -8,12 +8,10 @@ Script dedicated to `Library` Object
 
 import libpybee
 
-XML = "../libpybee/_tests/Test Library.xml"
+XML = "../_tests/test_lib_01.xml"
 MY_LIBRARY = libpybee.Library(XML)
 
-PLAYLISTS = MY_LIBRARY.playlists
+print(MY_LIBRARY)
 
-test = list(PLAYLISTS.values())[1].tracks
-
-for music in test:
-    print(music)
+for track in MY_LIBRARY.tracks.values():
+    print(track, track.genre)
