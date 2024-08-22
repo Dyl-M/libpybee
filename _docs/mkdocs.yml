@@ -5,7 +5,7 @@ repo_url: https://github.com/Dyl-M/libpybee
 
 nav:
     -   Introduction: index.md
-    -   Changelog: changelog.md
+    -   Changelog: CHANGELOG.md
 
 theme:
     name: material
