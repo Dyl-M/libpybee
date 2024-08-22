@@ -1,0 +1,25 @@
+name: Update CHANGELOG
+on:
+    release:
+        types: [created, edited, published]
+
+    workflow_dispatch:
+        inputs:
+            logLevel:
+                description: 'Log level'
+                required: true
+                default: 'warning'
+
+jobs:
+    changelog:
+        name: Update CHANGELOG
+        runs-on: ubuntu-latest
+        steps:
+            -   uses: actions/checkout@v4
+                with:
+                    ref: main
+
+            -   uses: rhysd/changelog-from-release/action@v3
+                with:
+                    file: CHANGELOG.md
+                    github_token: ${{ secrets.PAT }}
