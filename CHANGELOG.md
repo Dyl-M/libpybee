@@ -19,9 +19,6 @@ Fix regarding the "Grouping" tag, not used by everyone on every track. See the f
 * New badge for package version (PyPi)
 * Code from __sandbox.py used for "Usage" section for now.
 
-
-**Full Changelog**: https://github.com/Dyl-M/libpybee/compare/0.1.0...0.1.1
-
 [Changes][0.1.1]
 
 
@@ -38,8 +35,6 @@ Fix regarding the "Grouping" tag, not used by everyone on every track. See the f
 * [@Dyl-M](https://github.com/Dyl-M)
 * Assistance by [@deepsource-autofix](https://github.com/deepsource-autofix) and [@dependabot](https://github.com/dependabot)
 * Previous contributors from `libpytunes` are listed [here](https://github.com/liamks/libpytunes/graphs/contributors)
-
-**Full Changelog**: https://github.com/Dyl-M/libpybee/commits/0.1.0
 
 [Changes][0.1.0]
 
