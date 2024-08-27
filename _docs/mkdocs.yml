@@ -4,14 +4,24 @@ site_description: Documentation for libpybee, Python
 repo_url: https://github.com/Dyl-M/libpybee
 
 nav:
-    -   Introduction: index.md
+    -   Home: index.md
+    -   Usage: usage.md
+    -   References:
+            -   Library: references/library.md
+            -   Track: references/track.md
+            -   Playlist: references/playlist.md
     -   Changelog: changelog.md
+    -   License: license.md
+
 
 theme:
     name: material
     features:
+        - navigation.indexes
+        - navigation.expand
         - navigation.tabs
         - navigation.sections
+        - navigation.path
         - toc.integrate
         - navigation.top
         - search.suggest
@@ -43,6 +53,9 @@ extra:
             link: https://x.com/dyl_m_tweets
         -   icon: fontawesome/brands/linkedin
             link: https://www.linkedin.com/in/dylan-monfret/
+
+extra_css:
+    - css/styles.css
 
 markdown_extensions:
     - codehilite
