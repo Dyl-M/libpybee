@@ -40,7 +40,7 @@ for track in MY_LIBRARY.tracks.values():
     print(track)  # Output: [track.id] {track.artist} - {track.title}
 ```
 
-More samples will be available in the [`_examples`](https://github.com/Dyl-M/libpybee/tree/dev/_examples) folder in the near future.
+More samples will be available in the [`_examples`](https://github.com/Dyl-M/libpybee/tree/main/_examples) folder in the near future.
 
 Full documentation ➡️ [dyl-m.github.io/libpybee](https://dyl-m.github.io/libpybee/).
 
