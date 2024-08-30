@@ -23,9 +23,9 @@ class Playlist:
 
         self.name = None
         self.all_items = None
+        self.folder_id = None
         self.persistent_id = None
         self.tracks = []
-        self.n_tracks = 0
 
     def __iter__(self):
         """Iterate over the attributes"""
@@ -34,7 +34,7 @@ class Playlist:
 
     def __str__(self):
         """Print Playlist object in the following format: ['ID'] 'Name': 'Number of tracks in the playlist'."""
-        return f'[{self.id}] {self.name}: {self.n_tracks} track(s).'
+        return f'[{self.id}] {self.name}: {len(self.tracks)} track(s).'
 
     def to_dict(self):
         """Get a Playlist object as a dictionary."""
