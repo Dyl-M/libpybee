@@ -53,14 +53,12 @@ print(my_playlist_2)
 | `id`            | `str`  | Playlist Identifier                                                     | -             | XML tag `Playlist ID` with leading (optional) zeros                                 |
 | `name`          | `str`  | Playlist Name                                                           | `None`        | XML tag `Name`                                                                      |
 | `all_items`     | `bool` | [Unsure] Indicates whether all the music in the playlist really exists. | `None`        | XML tag `All Items`                                                                 |
+| `folder_id`     | `str`  | Folder ID if the playlist is included in one                            | `None`        | XML tag `Parent Persistent ID`                                                      |
 | `persistent_id` | `str`  | Playlist Persistent Identifier (randomly generated string)              | `None`        | XML tag `Persistent ID`                                                             |
 | `tracks`        | `list` | List of tracks included in the Playlist                                 | Empty list    | List of [`Track`](track.md) object based on information in `Playlist Items` XML tag |
-| `n_tracks`      | `int`  | Number of tracks in the playlist                                        | 0             | `len(Playlist.tracks)` while calling [`Library`](library.md)                        |
 
-- For now, the value of `n_tracks` is not directly attached to the actual number of tracks registered for a Playlist object. This will be fix in further version.
 - Attributes that can be deleted due to a lack of coherent information:
     - `all_items`: Perhaps inherited from `libpytunes`? And seems to be always `True`.
-    - `persistent_id`: Perhaps inherited from `libpytunes`? And seems to not exists.
 
 ## Methods
 
