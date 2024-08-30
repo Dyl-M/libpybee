@@ -1,3 +1,42 @@
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/Dyl-M/libpybee/releases/tag/0.2.0) - 30 Aug 2024
+
+## What's Changed
+
+New playlist folder handling and few documentation changes.
+
+> docs(workflow): New GH Action for CHANGELOG generation. by [@Dyl-M](https://github.com/Dyl-M) in https://github.com/Dyl-M/libpybee/pull/12
+> docs(GH Pages): Init. GH Pages for documentation by [@Dyl-M](https://github.com/Dyl-M) in https://github.com/Dyl-M/libpybee/pull/13
+> 📄 "I ain't reading all that" (you should tho). by [@Dyl-M](https://github.com/Dyl-M) in https://github.com/Dyl-M/libpybee/pull/14
+> 🖌️ Wait, that's it? by [@Dyl-M](https://github.com/Dyl-M) in https://github.com/Dyl-M/libpybee/pull/15
+> 📁 Thanks to someone, I discover playlist folders by [@Dyl-M](https://github.com/Dyl-M) in https://github.com/Dyl-M/libpybee/pull/16
+> 📄 Documentation - v0.2.0 by [@Dyl-M](https://github.com/Dyl-M) in https://github.com/Dyl-M/libpybee/pull/17
+
+#### 🛠️ Fix and changes
+
+* **Library**:
+  - `n_tracks` and `n_playlists` attributes removed.
+  - `playlist_folders` attribute added: contains all playlist folders with the Playlist Persistent ID as key.
+
+* **Playlist**:
+  - `folder_id` attribute added.
+  - `n_tracks` attribute removed.
+
+* **Track**: `episode_date` attribute removed.
+
+#### 📐 Minor changes
+
+* **Library**: `get_tracks`, `get_playlist` and `multi_tag` set as private (`__get_tracks` / `__get_playlist` / `__multi_tag`).
+
+#### 📄 Documentation
+
+* New GH Action for CHANGELOG generation (already up before tag 0.2.0)
+* README update (already up before tag 0.2.0)
+* Full documentation ➡️ [dyl-m.github.io/libpybee/](https://dyl-m.github.io/libpybee/) (already up before tag 0.2.0)
+
+[Changes][0.2.0]
+
+
 <a name="0.1.1"></a>
 # [0.1.1](https://github.com/Dyl-M/libpybee/releases/tag/0.1.1) - 20 Aug 2024
 
@@ -39,6 +78,7 @@ Fix regarding the "Grouping" tag, not used by everyone on every track. See the f
 [Changes][0.1.0]
 
 
+[0.2.0]: https://github.com/Dyl-M/libpybee/compare/0.1.1...0.2.0
 [0.1.1]: https://github.com/Dyl-M/libpybee/compare/0.1.0...0.1.1
 [0.1.0]: https://github.com/Dyl-M/libpybee/tree/0.1.0
 
