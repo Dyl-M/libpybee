@@ -39,7 +39,6 @@ class Track:
         self.disc_count = None
         self.disc_number = None
         self.encoder = None
-        self.episode_date = None
         self.file_location = None
         self.genre = None
         self.grouping = None

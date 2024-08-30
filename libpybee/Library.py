@@ -36,12 +36,11 @@ class Library:
         # Formatting content into dictionaries and classes: Track & Playlist
         tracks_raw = mbl.get('Tracks')
         playlists_raw = mbl.get('Playlists')
-        self.n_tracks = len(tracks_raw)
-        self.n_playlists = len(playlists_raw)
         self.tracks = {}
         self.playlists = {}
-        self.get_tracks(t_dict=tracks_raw, n_tracks=self.n_tracks)
-        self.get_playlist(p_list=playlists_raw, n_tracks=self.n_tracks)
+        self.playlist_folders = {}
+        self.__get_tracks(t_dict=tracks_raw, n_tracks=len(tracks_raw))
+        self.__get_playlist(p_list=playlists_raw, n_tracks=len(tracks_raw))
 
     def __str__(self):
         """Summarize the MusicBee Library Class"""
@@ -51,33 +50,44 @@ class Library:
                 f"* Library location: {self.music_folder}iTunes Music Library.xml\n"
                 f"* Major Version: {self.major_version}\n"
                 f"* Minor Version: {self.minor_version}\n"
-                f"* Number of tracks: {self.n_tracks}\n"
-                f"* Number of playlists: {self.n_playlists}")
+                f"* Number of tracks: {len(self.tracks)}\n"
+                f"* Number of playlists: {len(self.playlists)}\n"
+                f"* Number of playlist folders: {len(self.playlist_folders)}")
 
-    def get_playlist(self, p_list: list, n_tracks: int):
+    def __get_playlist(self, p_list: list, n_tracks: int):
         """Set each tracks of the MusicBee Library as Track object and store them in `Library.tracks` attribute.
         @param p_list: list of playlists information
         @param n_tracks: number of tracks in the Library for ID formatting.
         """
         for attributes in p_list:
-            # Init.
-            p_id = attributes.get('Playlist ID')
-            p = Playlist(p_id)
+            if attributes.get('Folder'):  # Managing Playlist Folder
+                self.playlist_folders[attributes.get('Playlist Persistent ID')] = {
+                    'folder_name': attributes.get('Name'),
+                    'folder_alternate_id': str(attributes.get('Playlist ID')),
+                    'playlists': []}
+            else:
+                # Init.
+                p_id = str(attributes.get('Playlist ID'))
+                p = Playlist(p_id)
 
-            # Base
-            p.name = attributes.get('Name')
+                # Base
+                p.name = attributes.get('Name')
 
-            # Optional
-            p.all_items = attributes.get('All Items')
-            p.persistent_id = attributes.get('Persistent ID')
-            p.tracks = [self.tracks[f'{t["Track ID"]:0{len(str(n_tracks))}d}']
-                        for t in attributes.get('Playlist Items', [])]
+                # Optional
+                p.all_items = attributes.get('All Items')
+                p.persistent_id = attributes.get('Playlist Persistent ID')
+                p.folder_id = attributes.get('Parent Persistent ID')
+                p.tracks = [self.tracks[f'{t["Track ID"]:0{len(str(n_tracks))}d}']
+                            for t in attributes.get('Playlist Items', [])]
 
-            p.n_tracks = len(p.tracks)
+                # Object stored in Library attribute `playlists`
+                self.playlists[p_id] = p
 
-            self.playlists[p_id] = p
+                # Object stored in Library attribute `playlist_folders` if included in a folder
+                if p.folder_id:
+                    self.playlist_folders[p.folder_id]['playlists'].append(p)
 
-    def get_tracks(self, t_dict: dict, n_tracks: int):
+    def __get_tracks(self, t_dict: dict, n_tracks: int):
         """Set each tracks of the MusicBee Library as Track object and store them in `Library.tracks` attribute.
         @param t_dict: dictionary of tracks information
         @param n_tracks: number of tracks in the Library for ID formatting.
@@ -95,7 +105,7 @@ class Library:
             t.album = attributes.get('Album')
             t.album_artist = attributes.get('Album Artist')
             t.album_rating = int(attributes.get('Album Rating')) if 'Album Rating' in attributes else None
-            t.artist_list = self.multi_tag(attributes, 'Artist')
+            t.artist_list = self.__multi_tag(attributes, 'Artist')
             t.bitrate = int(attributes.get('Bit Rate'))
             t.bpm = int(attributes.get('BPM')) if 'BPM' in attributes else None
             t.comments = attributes.get('Comments')
@@ -108,7 +118,7 @@ class Library:
             t.encoder = attributes.get('Encoder')
             t.episode_date = attributes.get('Episode Date')
             t.file_location = u_parse.unquote(u_parse.urlparse(attributes.get('Location')).path)
-            t.genre = self.multi_tag(attributes, 'Genre')
+            t.genre = self.__multi_tag(attributes, 'Genre')
             t.grouping = attributes.get('Grouping').split("; ") if 'Grouping' in attributes else None
             t.kind = attributes.get('Kind')
             t.last_played = attributes.get('Play Date UTC')
@@ -134,7 +144,7 @@ class Library:
             self.tracks[t_id] = t
 
     @staticmethod
-    def multi_tag(t_dict: dict, att_name: str):
+    def __multi_tag(t_dict: dict, att_name: str):
         """Register multiple value for a same tag (built especially for Genre and Artist tags).
         @param t_dict: dictionary of tracks information
         @param att_name: name of the attribute
