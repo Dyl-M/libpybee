@@ -18,6 +18,7 @@ print(my_library)
 * Minor Version: 1
 * Number of tracks: <Number of tracks>
 * Number of playlists: <Number of playlist>
+* Number of playlist folders: <Number of playlist folders>
 ```
 
 | Parameter  | Type  | Description                            |
@@ -26,18 +27,17 @@ print(my_library)
 
 ## Class attributes
 
-| Attributes      | Type   | Description                                                                                                                   |
-|-----------------|--------|-------------------------------------------------------------------------------------------------------------------------------|
-| `lib_path`      | `str`  | Path to the MusicBee "iTunes" XML file                                                                                        |
-| `app_version`   | `str`  | MusicBee Version                                                                                                              |
-| `lib_id`        | `str`  | MusicBee Library Identifier                                                                                                   |
-| `major_version` | `int`  | "1"                                                                                                                           |
-| `minor_version` | `int`  | "1"                                                                                                                           |
-| `music_folder`  | `str`  | Folder where MusicBee Tracks are stored                                                                                       |
-| `n_playlists`   | `int`  | Number of playlists registered in the MusicBee library                                                                        |
-| `n_tracks`      | `int`  | Number of tracks registered in the MusicBee library                                                                           |
-| `playlists`     | `dict` | Dictionary registering all playlists in the MusicBee library (Playlist ID as key, [`Playlist`](playlist.md) object as value). |
-| `tracks`        | `dict` | Dictionary registering all tracks in the MusicBee library (Track ID as key, [`Track`](track.md) object as value).             |
+| Attributes         | Type   | Description                                                         | Value by calling the constructor                                                                                              |
+|--------------------|--------|---------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| `lib_path`         | `str`  | Path to the MusicBee "iTunes" XML file                              | `lib_path` parameter                                                                                                          |
+| `app_version`      | `str`  | MusicBee Version                                                    | XML tag `Application Version`                                                                                                 |
+| `lib_id`           | `str`  | MusicBee Library Identifier                                         | XML tag `Library Persistent ID`                                                                                               |
+| `major_version`    | `int`  | "1"                                                                 | XML tag `Major Version`                                                                                                       |
+| `minor_version`    | `int`  | "1"                                                                 | XML tag `Minor Version`                                                                                                       |
+| `music_folder`     | `str`  | Folder where MusicBee Tracks are stored                             | XML tag `Music Folder` with "file://localhost/" mention removed                                                               |
+| `playlist_folders` | `dict` | Dictionary registering all playlist folders in the MusicBee library | **Dictionary description**: "Playlist Persistent ID" as key, [`Playlist`](playlist.md) object with other information as value |
+| `playlists`        | `dict` | Dictionary registering all playlists in the MusicBee library        | **Dictionary description**: "Playlist ID" as key, [`Playlist`](playlist.md) object as value                                   |
+| `tracks`           | `dict` | Dictionary registering all tracks in the MusicBee library           | **Dictionary description**: "Track ID" as key, [`Track`](track.md) object as value                                            |
 
 ## Notes
 

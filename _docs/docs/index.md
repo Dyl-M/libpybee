@@ -1,6 +1,6 @@
 ## Installation
 
-First command is optionnal if `pip` is already up-to-date.
+First command is optional if `pip` is already up-to-date.
 ```commandline
 python -m pip install --upgrade pip
 pip install libpybee
