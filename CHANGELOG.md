@@ -5,11 +5,11 @@
 
 New playlist folder handling and few documentation changes.
 
-> docs(workflow): New GH Action for CHANGELOG generation. by [@Dyl-M](https://github.com/Dyl-M) in https://github.com/Dyl-M/libpybee/pull/12
-> docs(GH Pages): Init. GH Pages for documentation by [@Dyl-M](https://github.com/Dyl-M) in https://github.com/Dyl-M/libpybee/pull/13
-> 📄 "I ain't reading all that" (you should tho). by [@Dyl-M](https://github.com/Dyl-M) in https://github.com/Dyl-M/libpybee/pull/14
-> 🖌️ Wait, that's it? by [@Dyl-M](https://github.com/Dyl-M) in https://github.com/Dyl-M/libpybee/pull/15
-> 📁 Thanks to someone, I discover playlist folders by [@Dyl-M](https://github.com/Dyl-M) in https://github.com/Dyl-M/libpybee/pull/16
+> docs(workflow): New GH Action for CHANGELOG generation. by [@Dyl-M](https://github.com/Dyl-M) in https://github.com/Dyl-M/libpybee/pull/12  
+> docs(GH Pages): Init. GH Pages for documentation by [@Dyl-M](https://github.com/Dyl-M) in https://github.com/Dyl-M/libpybee/pull/13  
+> 📄 "I ain't reading all that" (you should tho). by [@Dyl-M](https://github.com/Dyl-M) in https://github.com/Dyl-M/libpybee/pull/14  
+> 🖌️ Wait, that's it? by [@Dyl-M](https://github.com/Dyl-M) in https://github.com/Dyl-M/libpybee/pull/15  
+> 📁 Thanks to someone, I discover playlist folders by [@Dyl-M](https://github.com/Dyl-M) in https://github.com/Dyl-M/libpybee/pull/16  
 > 📄 Documentation - v0.2.0 by [@Dyl-M](https://github.com/Dyl-M) in https://github.com/Dyl-M/libpybee/pull/17
 
 #### 🛠️ Fix and changes
@@ -51,7 +51,7 @@ Fix regarding the "Grouping" tag, not used by everyone on every track. See the f
 #### 📐 Minor changes
 * Adding the `dev` branch to trigger the Tests Workflow
 * Renaming existing test file + add a 2nd one
-* Digits adjustement for Playlist and Track IDs (based on number of tracks)
+* Digits adjustment for Playlist and Track IDs (based on number of tracks)
 
 #### 📄 Documentation / README
 * New badges for Unit Tests and Badges
