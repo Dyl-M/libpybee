@@ -1,9 +1,8 @@
-# `libpybee`
+![](https://raw.githubusercontent.com/Dyl-M/libpybee/main/_media/project_banner.png)
 
 [![Version](https://img.shields.io/pypi/v/libpybee?style=flat-squar&label=Version&color=yellow&logo=pypi&logoColor=yellow)](https://pypi.org/project/libpybee/)
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Dyl-M/libpybee/python-publish.yml?label=Build&style=flat-square&logo=github-actions&logoColor=white)](https://github.com/Dyl-M/libpybee/actions/workflows/python-publish.yml)
-[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Dyl-M/libpybee/test.yml?label=Tests&style=flat-square&logo=github-actions&logoColor=white)](https://github.com/Dyl-M/libpybee/actions/workflows/test.yml)
-
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Dyl-M/libpybee/test.yml?label=Tests&style=flat-square&logo=github-actions&logoColor=white)](https://github.com/Dyl-M/libpybee/actions/workflows/test.yml)  
 [![GitHub last commit](https://img.shields.io/github/last-commit/Dyl-M/libpybee?label=Last%20commit&style=flat-square&logo=git&logoColor=white)](https://github.com/Dyl-M/libpybee/branches)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/w/Dyl-M/libpybee?label=Commit%20activity&style=flat-square&logo=git&logoColor=white)](https://github.com/Dyl-M/libpybee/branches)
 [![DeepSource](https://app.deepsource.com/gh/Dyl-M/libpybee.svg/?label=active+issues&show_trend=true&token=QCUsSXrxx0Gn8hbQxa9G0KcW)](https://app.deepsource.com/gh/Dyl-M/libpybee/)
