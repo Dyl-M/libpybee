@@ -1,0 +1,12 @@
+/* Justify all paragraph text */
+p {
+    text-align: justify;
+}
+
+.md-main__inner.md-grid {
+    max-width: 85%;
+}
+
+.md-grid {
+    max-width: 85%;
+}
