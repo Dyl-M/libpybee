@@ -133,3 +133,6 @@ dmypy.json
 
 # Token
 _token
+
+# Media
+_media/visuals_hidden
