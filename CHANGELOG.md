@@ -5,8 +5,6 @@
 * Update license copyright year(s) by [@Dyl-M](https://github.com/Dyl-M) in [#18](https://github.com/Dyl-M/libpybee/pull/18)
 * deps(python): update unidecode requirement from ~=1.3.8 to ~=1.4.0 in the all-dependencies group by [@dependabot](https://github.com/dependabot) in [#19](https://github.com/Dyl-M/libpybee/pull/19)
 
-**Full Changelog**: https://github.com/Dyl-M/libpybee/compare/0.2.0...0.2.1
-
 [Changes][0.2.1]
 
 
