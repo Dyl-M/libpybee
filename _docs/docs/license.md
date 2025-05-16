@@ -1,7 +1,7 @@
 # The MIT License (MIT)
 
-Copyright &copy; 2014-2024 Liam KAUFMAN  
-Copyright &copy; 2024 Dylan MONFRET
+Copyright &copy; 2014–2025 Liam KAUFMAN  
+Copyright &copy; 2024–2025 Dylan MONFRET
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

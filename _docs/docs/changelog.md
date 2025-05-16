@@ -1,3 +1,8 @@
+## [0.2.1](https://github.com/Dyl-M/libpybee/releases/tag/0.2.1) - 16 May 2025
+
+> Update license copyright year(s) by [@Dyl-M](https://github.com/Dyl-M) in [#18](https://github.com/Dyl-M/libpybee/pull/18)  
+> Update unidecode requirement from ~=1.3.8 to ~=1.4.0 in the all-dependencies group by [@dependabot](https://github.com/dependabot) in [#19](https://github.com/Dyl-M/libpybee/pull/19)
+
 ## [0.2.0](https://github.com/Dyl-M/libpybee/releases/tag/0.2.0) - 30 Aug 2024
 
 New playlist folder handling and few documentation changes.
